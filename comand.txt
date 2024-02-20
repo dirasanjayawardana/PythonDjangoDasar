@@ -1,0 +1,10 @@
+pip --instal django
+django-admin startproject
+
+# siklus CRUD Django
+startapp --> python manage.py startapp nama_app
+edit Model.py --> dengan class  dan field baru
+makemigration --> python manage.py makemigrations
+migrate --> python manage.py migrate
+ubah Admin.py --> tambah Admin.site.register
+runserver --> python manage.py runserver

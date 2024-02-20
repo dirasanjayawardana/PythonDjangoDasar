@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+
+<div class="p-5 bg-secondary text-white" style="min-height: 100vh">
+    <h1 class="fw-bold">Semua artikel</h1>
+    <ul class="list-group mt-4" style="width:50%">
+        {% for item in object_list %}
+        <li class="list-group-item"><a href="/articles/read/{{item.uuid}}" class="text-decoration-none fw-bold">{{item.title}} - {{item.created_at}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+
+<div class="p-5 bg-secondary text-white" style="min-height: 100vh">
+    <h1 class="mb-4 text-capitalize fw-bold">{{object.title}}</h1>
+    <p>{{ object.content}}</p>
+    <p class="fw-bolder">Author: {{ object.created_by.username}}</p>
+    <p class="fw-bolder">Published: {{ object.created_at | date}}</p>
+    <a href="/articles/shows" class="btn btn-primary">&larr; kembali ke halaman sebelumnya</a>
+    <a href="/articles?uuid={{object.uuid}}" class="btn btn-primary">Edit article</a>
+    <a href="/articles/{{object.uuid}}/delete" class="btn btn-danger">Delete article</a>
+</div>
+
+{% endblock %}

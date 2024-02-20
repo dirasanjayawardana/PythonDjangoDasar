@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+
+<div class="bg-secondary text-white p-5" style="min-height:100vh">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h4>{{ status }}</h4>
+        <a href="/articles/read/{{detail}}" class="">{{title}}</a>
+        <br/>
+
+        {% if object is not None %}
+        <input type="hidden" name="uuid" value="{{object.uuid}}" class="form-control"/>
+        {% endif %}
+
+        <br/>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+            <input  type="text" name="title" placeholder="Title..." value="{{object.title}}"  class="form-control"/>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Content</span>
+            <textarea class="form-control" name="content">{{object.content}}</textarea>
+        </div>
+        <hr/>
+        <button type="submin" class="btn btn-primary">Publish</button>
+    </form>
+</div>
+
+{% endblock %}
